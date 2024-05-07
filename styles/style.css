@@ -40,7 +40,7 @@ ol {
   list-style: none;
 }
 
-:focus,
+
 .content__list-item:focus-visible,
 .search-form__textfield:focus-visible,
 .search-form__label-text:focus-visible,
@@ -116,6 +116,8 @@ ol {
   color: #fff;
 }
 
+.search-form__label:active,
+.search-form__textfield:active,
 .content__card-link:focus-visible,
 .content__card-link_current:focus-visible {
   outline: 1px solid #fff;
@@ -132,7 +134,6 @@ ol {
   display: flex;
   gap: 6px;
   max-width: 200px;
-  max-height: 101px;
   flex-direction: column;
   padding: 2px;
 }
@@ -187,7 +188,7 @@ ol {
 }
 
 .result__video {
-  max-height: 386px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   width: 100%;
@@ -245,14 +246,11 @@ ol {
 
 .search-form__label:focus-visible,
 .search-form__textfield:focus-visible,
-.search-form__label:not(:has(.search-form__textfield)):focus-visible {
+.search-form__textfield:focus,
+.search-form__label:not(:has(.search-form__textfield)):focus-visible,
+.search-form__label:not(:has(.search-form__textfield)):focus {
   outline: 1px solid #fff;
   outline-offset: 1px;
-}
-
-.search-form__label:active,
-.search-form__textfield:active {
-  outline: 1px solid #fff;
 }
 
 .search-form__textfield:hover {
@@ -315,7 +313,8 @@ ol {
   padding: 6px 0;
 }
 
-.button:focus-visible {
+.button:focus-visible,
+.button:focus {
   outline: 1px solid #fff;
   outline-offset: -3px;
 }
