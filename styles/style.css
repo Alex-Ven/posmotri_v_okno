@@ -40,35 +40,10 @@ ol {
   list-style: none;
 }
 
-
-.content__list-item:focus-visible,
-.search-form__textfield:focus-visible,
-.search-form__label-text:focus-visible,
-.search-form__pseudo-checkbox:focus-visible,
-.search-form__submit-button:focus-visible,
-.more-button:focus-visible,
-.search-form__label:not(:has(.search-form__textfield)):active {
-  outline: none;
-}
-
-.content__card-link:hover,
-.search-form__label:not(:has(.search-form__textfield)):hover,
-.button:hover {
-  text-decoration: underline;
-}
-
-.search-form__label:not(:has(.search-form__textfield)):active,
-.content__card-link_current:active,
-.button:active,
-.more-button:active {
-  text-decoration: none;
-}
-
 .content {
   display: flex;
-  justify-content: space-around;
   min-height: 534px;
-  min-width: 1140px;
+  width: 100%;
   gap: 30px;
   padding: 0 30px;
 }
@@ -88,25 +63,19 @@ ol {
   color: #545050;
 }
 
-.content__card-link_current,
-.content__card-link_current:active,
-.content__card-link:active,
-.button:active {
-  background-color: #545050;
-}
-
 .content__list {
   display: flex;
   flex-direction: column;
   position: relative;
   min-height: 298px;
   max-block-size: 298px;
+  width: 414px;
   block-size: 100%;
   overflow: auto;
 }
 
 .content__list-item:not(last-child) {
-  padding-bottom: 32px;
+  padding-bottom: 26px;
 }
 
 .content__card-link {
@@ -116,32 +85,27 @@ ol {
   color: #fff;
 }
 
-.search-form__label:active,
-.search-form__textfield:active,
-.content__card-link:focus-visible,
-.content__card-link_current:focus-visible {
-  outline: 1px solid #fff;
-}
-
 .content__video-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-height: 101px;
+  height: 107px;
 }
 
 .content__video-card-description-container {
   display: flex;
   gap: 6px;
-  max-width: 200px;
+  max-width: 198px;
   flex-direction: column;
   padding: 2px;
 }
 
 .content__video-card-thumbnail {
+  position: relative;
   object-fit: cover;
   object-position: center;
-  max-width: 196px;
+  width: 196px;
+  padding: 2px;
 }
 
 .content__video-card-title {
@@ -178,12 +142,12 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 18px;
 }
 
 .result__video-container {
   min-width: 711px;
-  max-height: 386px;
+  height: 386px;
   position: relative;
 }
 
@@ -197,6 +161,7 @@ ol {
 .search-form {
   display: flex;
   align-items: flex-end;
+  height: 54px;
   gap: 40px;
 }
 
@@ -242,19 +207,6 @@ ol {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-}
-
-.search-form__label:focus-visible,
-.search-form__textfield:focus-visible,
-.search-form__textfield:focus,
-.search-form__label:not(:has(.search-form__textfield)):focus-visible,
-.search-form__label:not(:has(.search-form__textfield)):focus {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-.search-form__textfield:hover {
-  cursor: auto;
 }
 
 .search-form__checkbox-list {
@@ -314,7 +266,56 @@ ol {
 }
 
 .button:focus-visible,
-.button:focus {
+.search-form__submit-button:focus-visible,
+.more-button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: -3px;
+}
+
+.content__card-link_current,
+.content__card-link_current:active,
+.content__card-link:active,
+.button:active {
+  background-color: #545050;
+}
+
+.content__list-item:focus-visible,
+.search-form__textfield:focus,
+.search-form__textfield:focus-visible,
+.search-form__label:has(.search-form__textfield):focus,
+.search-form__label-text:focus-visible,
+.search-form__pseudo-checkbox:focus-visible,
+.search-form__label:not(:has(.search-form__textfield)):active {
+  outline: none;
+}
+
+.content__card-link:hover,
+.search-form__label:not(:has(.search-form__textfield)):hover,
+.button:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:not(:has(.search-form__textfield)):active,
+.content__card-link_current:active,
+.button:active,
+.more-button:active {
+  text-decoration: none;
+}
+
+.search-form__label:active,
+.search-form__textfield:active,
+.content__card-link:focus-visible,
+.content__card-link_current:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.search-form__label:focus-visible,
+.search-form__label:has(.search-form__textfield):focus-visible,
+.search-form__label:not(:has(.search-form__textfield)):focus-within {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:hover {
+  cursor: auto;
 }
